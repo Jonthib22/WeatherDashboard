@@ -1,0 +1,53 @@
+body {
+    font-family: "Open Sans", sans-serif;
+  }
+  
+.header {
+    background-color: #3c3c3c;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+  }
+
+.searcharea {
+  background-color: #e6f3ff;
+  padding: 20px;
+}
+#searchbtn{
+  padding: 6px 5px 0px 5px;
+
+}
+
+input {
+    width: 75%;
+  }
+  
+#list-cities {
+    width: 22rem;
+  }
+  
+#city-date-icon,
+#city-name,
+#present-icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: center/space-around/space-between;
+  }
+  
+h6 {
+    font-weight: bold;
+  }
+  
+h4 {
+      margin: 5px;
+  }
+  
+#result-cards {
+      display: flex;
+      flex-direction: row;
+      justify-content: center/space-between;
+  }
+  
+.results {
+      margin: 10px;
+  }

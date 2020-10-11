@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/70fcd40144.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+    <header>
+        <div class="header">
+            <div>
+                <h1>Weather Dashboard</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 pl-2">
+                <div class="card" style="width: 22rem;">
+                    <div class="card-body">
+                        <h6>Search for a City:</h6>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="city-input">
+                            </div>
+                            <button id="search-button" type="submit" class="btn btn-primary"><i
+                                    class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <ul id="list-cities" class="list-group"></ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div id="present-weather" class='card'>
+                    <div class="card-body">
+                        <span id='city-name'></span>
+                        <span id='present-icon'></span>
+                    </div>
+                    <p class="card-text" id="present-temp"></p>
+                    <p class="card-text" id="present-humidity"></p>
+                    <p class="card-text" id="present-wind"></p>
+                    <p class="card-text" id="present-uv"></p>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div id="result-weather" class="col-md-9">
+                        <h4>5-Day Forecast:</h4>
+                        <div id="result-cards">
+                            <div class="card results">
+                                <div id="result1" class="card-body">
+                                    <span class="card-title" id='result-date1'>
+                                    </span>
+                                    <span id='result-icon1'></span>
+                                    <p class="card-text" id="result-temp1"></p>
+                                    <p class="card-text" id="result-humidity1"></p>
+                                </div>
+                            </div>
+                            <div class="card results">
+                                <div id="result2" class="card-body">
+                                    <span class="card-title" id='result-date2'>
+                                    </span>
+                                    <span id='result-icon2'></span>
+                                    <p class="card-text" id="result-temp2"></p>
+                                    <p class="card-text" id="result-humidity2"></p>
+                                </div>
+                            </div>
+                            <div class="card results">
+                                <div id="result3" class="card-body">
+                                    <span class="card-title" id='result-date3'>
+                                    </span>
+                                    <span id='result-icon3'></span>
+                                    <p class="card-text" id="result-temp3"></p>
+                                    <p class="card-text" id="result-humidity3"></p>
+                                </div>
+                            </div>
+                            <div class="card results">
+                                <div id="result4" class="card-body">
+                                    <span class="card-title" id='result-date4'>
+                                    </span>
+                                    <span id='result-icon4'></span>
+                                    <p class="card-text" id="result-temp4"></p>
+                                    <p class="card-text" id="result-humidity4"></p>
+                                </div>
+                            </div>
+                            <div class="card results">
+                                <div id="result5" class="card-body">
+                                    <span class="card-title" id='result-date5'>
+                                    </span>
+                                    <span id='result-icon5'></span>
+                                    <p class="card-text" id="result-temp5"></p>
+                                    <p class="card-text" id="result-humidity5"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
